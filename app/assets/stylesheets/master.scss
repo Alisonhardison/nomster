@@ -17,12 +17,18 @@ h1, h2, h3, h4, h5, h6 {
   padding:0;
 }
 
-body{
+body {
   background: image_url('interlaced.png');
   font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 }
 
-.navbar{
+.navbar {
   background: image_url('cartographer.png');
   box-shadow:10px 10px 5px grey;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #B384ED;
+  font-family: 'fontspring_demo_-_intro_rusRg';
+  font-size: 26px;  
 }
