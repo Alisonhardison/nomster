@@ -24,7 +24,7 @@ body {
 
 .navbar {
   background: image_url('cartographer.png');
-  box-shadow:10px 10px 5px grey;
+  box-shadow:6px 6px 5px grey;
 }
 
 .navbar-inverse .navbar-brand {
@@ -32,3 +32,11 @@ body {
   font-family: 'chunkfive_printregular';
   font-size: 26px;  
 }
+
+.pagination a {
+  margin: 0 8px;
+  color: #B384ED;
+  }
+
+  
+
