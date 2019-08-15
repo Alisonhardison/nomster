@@ -1,5 +1,5 @@
 <% @places.each do |place| %>
-<%= will_paginate @places, :page_links => false %>
+
 
   <div class="booyah-box col-10 offset-1">
     <h1><%= place.name %></h1>
@@ -9,9 +9,6 @@
 
 
 
-
-
-
-
 <% end %>
 
+<%= will_paginate @places %>
