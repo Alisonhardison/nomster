@@ -67,10 +67,12 @@ gem 'popper_js', '~> 1.11.1'
 gem 'bootstrap', '4.0.0.alpha6'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.1', '>= 3.1.7'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'devise'
-gem "geocoder"
-gem "figaro"
+gem 'geocoder'
+gem 'figaro'
+gem 'carrierwave', '~> 1.0'
+gem 'fog-aws'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
