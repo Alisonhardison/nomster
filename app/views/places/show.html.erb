@@ -46,6 +46,7 @@
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
       <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
+      <%= link_to 'Add a Photo', place_photos_path(@place), class: 'btn btn-primary' %>
     <% end %>   
     </div>
 </div>
@@ -105,14 +106,65 @@
   <% end %>
 </div>
 
-<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-  <div class="modal-body">
-  <%=f.input :picture %>
-  <%= f.input :caption %>
-  <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
-  </div>
-<% end %>
+<div class= "clear"></div>
 
+<br>
+<br>
+
+<div class="col-8 offset-1">
+
+<h1 class="float-left">Photos</h1>
+
+</div>
+
+
+
+  <!-- Button trigger modal picture -->
+<button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#photoModal">
+  Add a photo
+</button>
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add A Photo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+        <%= f.input :caption %>
+        <%= f.input :picture %>
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         <%= f.submit "Add Photo", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+  
+<div>
 <% @place.photos.each do |photo| %>
-  <%= image_tag(photo.picture.url, size: '100') %>
+  <div>
+    <% if photo.picture.url %>
+
+    <%= image_tag photo.picture.url, class: 'show-image-size' %>
+    <%= photo.caption %>
+    <% end %>
+  </div>
+  <div>
+   <%= photo.caption %>
+ </div>
 <% end %>
+</div>
+
+
