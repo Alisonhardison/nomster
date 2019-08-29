@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :comments, only: :create
     resources :photos, only: :create
   end
-  resources :user, only: :show
+  
+  resources :users, only: :show
 end
 
