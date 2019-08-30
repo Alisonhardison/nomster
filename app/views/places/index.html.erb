@@ -61,10 +61,12 @@
       </div>
     <% end %>
    
-
-      
-
-
+    <% if place.photos.present? %>
+      <% if place.photos.last.picture.present? %>
+       <img class="img-fluid" src="https://my-bucket-nomster88.s3.amazonaws.com/uploads/photo/picture/1/Screen_Shot_2019-08-26_at_2.26.12_PM.png?X-Amz-Expires=600&amp;X-Amz-Date=20190830T145656Z&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAZ7VBPJ643OBUHJMN%2F20190830%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=f15f9f7ccfaff793644d7b3e7bf594506823aebf92f553fd2edb3aed50070d52">
+      <% end %>
+    <% end %>
+   
 
    </div>
 <% end %>
