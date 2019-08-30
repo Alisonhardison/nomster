@@ -114,9 +114,9 @@
 <br>
 
 <div class="col-8 offset-1">
-
+<br /><br />
 <h1 class="float-left">Photos</h1>
-
+<br /><br />
 </div>
 
 
@@ -153,18 +153,18 @@
 
   
 <div>
-<% @place.photos.each do |photo| %>
-  <div>
-    <% if photo.picture.url %>
+  <% @place.photos.each do |photo| %>
+      <div>
+       <% if photo.picture.url %>
 
-    <%= image_tag photo.picture.url, class: 'show-image-size' %>
-    <%= photo.caption %>
-    <% end %>
-  </div>
-  <div>
-   <%= photo.caption %>
- </div>
-<% end %>
+        <%= image_tag photo.picture.url, class: 'show-image-size' %>
+        <%= photo.caption %>
+        <% end %>
+      </div>
+    <div>
+      <%= photo.caption %>
+   </div>
+  <% end %>
 </div>
 
 
