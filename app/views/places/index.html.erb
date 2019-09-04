@@ -43,12 +43,16 @@
     
     <% if place.user.present? %>
       <small><%= place.user.email %></small>
-    
     <% end %>
+      <% if place.photos.present? %>
+        <div>
+        <img class="img-fluid"
+          <%= image_tag place.photos.last.picture.url %>
+        </div>
+      <% end %>
 
     
-    
-
+  
     <% if place.comments.present? %>
       <div class="col-12">
         <blockquote>  
@@ -61,14 +65,7 @@
       </div>
     <% end %>
    
-    <% if place.photos.present? %>
-      <% if place.photos.last.picture.present? %>
-       <img class="img-fluid" src="https://my-bucket-nomster88.s3.amazonaws.com/uploads/photo/picture/nonapizza.png">
-
-
-       
-      <% end %>
-    <% end %>
+    
    
 
    </div>
